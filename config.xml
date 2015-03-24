@@ -11,8 +11,8 @@
         A tic tac toe game
     </description>
 
-    <author href="https://github.com/ProfessorKevinForbes/TicTacToe4" email="professorkevinforbes@gmail.com">
-        Kevin Forbes
+    <author href="https://github.com/rivvier/TicTacToe2" email="rivvier.codras@gmail.com">
+        Javier Rivera
     </author>
 
 	<icon src="icon.png" />
@@ -25,6 +25,13 @@
     <uses-sdk android:minSdkVersion="19"
               android:targetSdkVersion="19"
               android:maxSdkVersion="19" />
+
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.CameraLauncher" />
+    </feature>
+
+    <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
+    <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
 
 
 </widget>
