@@ -1,3 +1,11 @@
+document.addEventListener("deviceready",onDeviceReady,false);
+
+function onDeviceReady() {
+    pictureSource=navigator.camera.PictureSourceType;
+    destinationType=navigator.camera.DestinationType;
+}
+
+
 function position(name) {
 	this.name = name;
 	this.clickedBy = 0;
@@ -116,3 +124,28 @@ function detectWin(lastClick) {
 
 	}
 }
+
+function changePhoto(name) {
+	imageName = name;
+	//alert('Changing Photo');
+	// Take picture using device camera and retrieve image as base64-encoded string
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL });
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+
+function onPhotoDataSuccess(imageData) {
+      // Get image handle
+      //
+      var smallImage = document.getElementById(imageName);
+
+      // Unhide image elements
+      //
+      //smallImage.style.display = 'block';
+
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      smallImage.src = "data:image/jpeg;base64," + imageData;}
