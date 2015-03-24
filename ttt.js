@@ -1,3 +1,8 @@
+var imageName="";
+
+var pictureSource;   // picture source
+var destinationType; // sets the format of returned value 
+
 document.addEventListener("deviceready",onDeviceReady,false);
 
 function onDeviceReady() {
